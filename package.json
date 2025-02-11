@@ -37,6 +37,8 @@
     "@blackamda/telegram-image-url": "^1.0.0",
     "youtubedl-core": "^4.11.5",
     "moment-timezone": "latest",
-    "file_size_url": "^1.0.4"
+    "file_size_url": "^1.0.4",
+    "@sl-code-lords/movie-api": "1.0.0",
+    "pixaldrain-sinhalasub": "git+https://github.com/DarkMakerofc/pixaldrain-sinhalasub.git"
   }
 }
