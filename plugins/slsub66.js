@@ -113,7 +113,7 @@ async (conn, mek, m, { from, q, reply }) => {
 
                     try {
                         // Fetch the direct download link for the selected quality
-                        const directLink = await PixaldrainDL(link, quality, "direct");
+                        const directLink = await PixaldrainDL(link,"HD 720p","direct"));
                         if (directLink) {
                             // Provide download option
                             await sock.sendMessage(from, {
@@ -121,8 +121,8 @@ async (conn, mek, m, { from, q, reply }) => {
                                     url: directLink
                                 },
                                 mimetype: 'video/mp4',
-                                fileName: `🎬CK CineMAX🎬 - (${movie.title}).mp4`,
-                                caption: `${movie.title} - ${quality}\n\n> 👨🏻‍💻 *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ* `
+                                fileName: `🎬CK CineMAX🎬 - ${movie.title} .mp4`,
+                                caption: `${movie.title} - ${quality}\n\n> 👨🏻‍💻 *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ*`
                             }, { quoted: mek });
 
                             // React with success
