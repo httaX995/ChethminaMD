@@ -116,7 +116,7 @@ async (conn, mek, m, { from, q, reply }) => {
                         const directLink = await PixaldrainDL(link, quality, "direct");
                         if (directLink) {
                             // Provide download option
-                            await conn.sendMessage(from, {
+                            await sock.sendMessage(from, {
                                 document: {
                                     url: directLink
                                 },
