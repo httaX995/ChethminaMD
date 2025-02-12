@@ -1,11 +1,11 @@
 const { cmd } = require('../command');
 const { SinhalaSub } = require('@sl-code-lords/movie-api');
-const { PixaldrainDL } = require("pixaldrain-sinhalasub");
+var { PixaldrainDL } = require("/pixaldrain-sinhslasub.js");
 const axios = require('axios');
 
 // Movie search command
 cmd({
-    pattern: "ckcm",
+    pattern: "ckdl",
     desc: "Search for a movie and get details and download options.",
     category: "movie",
     react: "🔍",
@@ -27,8 +27,8 @@ async (conn, mek, m, { from, q, reply }) => {
 
         // Step 2: Send the search results to the user
         const sentMsg = await conn.sendMessage(from, {
-            image: { url: `https://i.ibb.co/wh5Zfv5x/20250212-113018.jpg` },
-            caption: message  // Send the description as the caption
+            image: { url: `https://i.ibb.co/zHLW3WL/044e155205d4f11c.jpg` },
+            caption: message,  // Send the description as the caption
         }, { quoted: mek });
 
         // Wait for the user to select a movie by number
@@ -73,14 +73,14 @@ async (conn, mek, m, { from, q, reply }) => {
           movieMessage += `1 | 𝖲𝖣 - 480𝗉\n`;
           movieMessage += `2 | 𝖧𝖣 - 720p\n`;
           movieMessage += `3 | 𝖥𝖧𝖣 - 1080p\n\n`;
-          movieMessage += `> 👨🏻‍💻 ᴍᴀᴅᴇ ʙʏ *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ* `;
+          movieMessage += `> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Avishka_X `;
 
             const imageUrl = movie.images && movie.images.length > 0 ? movie.images[0] : null;
 
             // Step 4: Send movie details with download options
             const movieDetailsMessage = await conn.sendMessage(from, {
                 image: { url: imageUrl },
-                caption: movieMessage
+                caption: movieMessage,
             }, { quoted: mek });
 
             // Listen for the user's reply to select the download quality
@@ -95,13 +95,13 @@ async (conn, mek, m, { from, q, reply }) => {
                 if (message.message.extendedTextMessage.contextInfo.stanzaId === movieDetailsMessage.key.id) {
                     let quality;
                     switch (userReply) {
-                        case 'SD':
+                        case '1':
                             quality = "SD 480p";
                             break;
-                        case 'HD':
+                        case '2':
                             quality = "HD 720p";
                             break;
-                        case 'FHD':
+                        case '3':
                             quality = "FHD 1080p";
                             break;
                         default:
@@ -113,16 +113,16 @@ async (conn, mek, m, { from, q, reply }) => {
 
                     try {
                         // Fetch the direct download link for the selected quality
-                        const directLink = await PixaldrainDL(link,quality,"direct"));
+                        const directLink = await PixaldrainDL(link, quality, "direct");
                         if (directLink) {
                             // Provide download option
-                            await sock.sendMessage(from, {
+                            await conn.sendMessage(from, {
                                 document: {
                                     url: directLink
                                 },
                                 mimetype: 'video/mp4',
-                                fileName: `🎬CK CineMAX🎬 - ${movie.title} .mp4`,
-                                caption: `${movie.title} - ${quality}\n\n> 👨🏻‍💻 *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ*`
+                                fileName: `🎬Avishka_X-MD ᴍᴏᴠɪᴇꜱ🎬(${movie.title}).mp4`,
+                                caption: `${movie.title} - ${quality}\n\n> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Avishka_X `
                             }, { quoted: mek });
 
                             // React with success
