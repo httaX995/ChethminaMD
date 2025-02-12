@@ -27,7 +27,7 @@ async (conn, mek, m, { from, q, reply }) => {
 
         // Step 2: Send the search results to the user
         const sentMsg = await conn.sendMessage(from, {
-            image: { url: `https://i.ibb.co/zHLW3WL/044e155205d4f11c.jpg` },
+            image: { url: `https://i.ibb.co/wh5Zfv5x/20250212-113018.jpg` },
             caption: message,  // Send the description as the caption
             contextInfo: {
                 forwardingScore: 999,
@@ -77,7 +77,7 @@ async (conn, mek, m, { from, q, reply }) => {
           movieMessage += `1 | 𝖲𝖣 - 480𝗉\n`;
           movieMessage += `2 | 𝖧𝖣 - 720p\n`;
           movieMessage += `3 | 𝖥𝖧𝖣 - 1080p\n\n`;
-          movieMessage += `> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Avishka_X `;
+          movieMessage += `> 👨🏻‍💻 ᴍᴀᴅᴇ ʙʏ *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ* `;
 
             const imageUrl = movie.images && movie.images.length > 0 ? movie.images[0] : null;
 
@@ -129,8 +129,8 @@ async (conn, mek, m, { from, q, reply }) => {
                                     url: directLink
                                 },
                                 mimetype: 'video/mp4',
-                                fileName: `🎬Avishka_X-MD ᴍᴏᴠɪᴇꜱ🎬(${movie.title}).mp4`,
-                                caption: `${movie.title} - ${quality}\n\n> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Avishka_X `
+                                fileName: `🎬CK CineMAX🎬 - (${movie.title}).mp4`,
+                                caption: `${movie.title} - ${quality}\n\n> 👨🏻‍💻 *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ* `
                             }, { quoted: mek });
 
                             // React with success
