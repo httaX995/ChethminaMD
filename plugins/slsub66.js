@@ -1,6 +1,6 @@
 const { cmd } = require('../command');
 const { SinhalaSub } = require('@sl-code-lords/movie-api');
-var { PixaldrainDL } = require("/pixaldrain-sinhslasub.js");
+const { PixaldrainDL } = require("pixaldrain-sinhalasub");
 const axios = require('axios');
 
 // Movie search command
@@ -121,8 +121,8 @@ async (conn, mek, m, { from, q, reply }) => {
                                     url: directLink
                                 },
                                 mimetype: 'video/mp4',
-                                fileName: `🎬Avishka_X-MD ᴍᴏᴠɪᴇꜱ🎬(${movie.title}).mp4`,
-                                caption: `${movie.title} - ${quality}\n\n> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Avishka_X `
+                                fileName: `🎬CK CineMAX🎬(${movie.title}).mp4`,
+                                caption: `${movie.title} - ${quality}\n\n> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ CHETHMINA `
                             }, { quoted: mek });
 
                             // React with success
