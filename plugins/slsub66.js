@@ -28,11 +28,7 @@ async (conn, mek, m, { from, q, reply }) => {
         // Step 2: Send the search results to the user
         const sentMsg = await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/wh5Zfv5x/20250212-113018.jpg` },
-            caption: message,  // Send the description as the caption
-            contextInfo: {
-                forwardingScore: 999,
-                isForwarded: true,
-            }
+            caption: message  // Send the description as the caption
         }, { quoted: mek });
 
         // Wait for the user to select a movie by number
@@ -84,11 +80,7 @@ async (conn, mek, m, { from, q, reply }) => {
             // Step 4: Send movie details with download options
             const movieDetailsMessage = await conn.sendMessage(from, {
                 image: { url: imageUrl },
-                caption: movieMessage,
-                contextInfo: {
-                    forwardingScore: 999,
-                    isForwarded: true,
-                }
+                caption: movieMessage
             }, { quoted: mek });
 
             // Listen for the user's reply to select the download quality
