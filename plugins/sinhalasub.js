@@ -8,7 +8,7 @@ const {
   PixaldrainDL
 } = require("pixaldrain-sinhalasub");
 cmd({
-  'pattern': 'sinhalasub1',
+  'pattern': 'ckdl2',
   'desc': "Search for a movie and get details and download options.",
   'category': "movie",
   'react': '🔍',
