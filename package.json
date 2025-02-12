@@ -39,6 +39,7 @@
     "moment-timezone": "latest",
     "file_size_url": "^1.0.4",
     "@sl-code-lords/movie-api": "1.0.0",
-    "pixaldrain-sinhalasub": "git+https://github.com/Mrnimama/pixaldrain-sinhalasub.git"
+    "pixaldrain-sinhalasub": "git+https://github.com/Mrnimama/pixaldrain-sinhalasub.git",
+    "axios": "1.7.9"
   }
 }
