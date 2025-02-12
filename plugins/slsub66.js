@@ -113,7 +113,7 @@ async (conn, mek, m, { from, q, reply }) => {
 
                     try {
                         // Fetch the direct download link for the selected quality
-                        const directLink = await PixaldrainDL(link,"HD 720p","direct"));
+                        const directLink = await PixaldrainDL(link,quality,"direct"));
                         if (directLink) {
                             // Provide download option
                             await sock.sendMessage(from, {
