@@ -113,17 +113,10 @@ async (conn, mek, m, { from, q, reply }) => {
 
                     try {
                         // Fetch the direct download link for the selected quality
-                        const directLink = await PixaldrainDL(link, quality, "direct");
-                        if (directLink) {
+                        
                             // Provide download option
-                            await conn.sendMessage(from, {
-                                document: {
-                                    url: directLink
-                                },
-                                mimetype: 'video/mp4',
-                                fileName: `🎬CK CineMAX🎬(${movie.title}).mp4`,
-                                caption: `${movie.title} - ${quality}\n\n> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ CHETHMINA `
-                            }, { quoted: mek });
+                            const directLink = await PixaldrainDL(link,quality,"direct"))
+                            await conn.sendMessage(from, { document: { url:directLink }, caption: '> 👨🏻‍💻 ᴍᴀᴅᴇ ʙʏ *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ*', mimetype: 'video/mp4', fileName:movie.title + ".mp4"}, { quoted: mek });
 
                             // React with success
                             await conn.sendMessage(from, {
