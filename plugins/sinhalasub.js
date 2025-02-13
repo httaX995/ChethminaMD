@@ -16,8 +16,8 @@ const { sinhalaSub } = require("mrnima-moviedl");
 const axios = require("axios");
 
 // Command for searching and downloading movies
-smd({
-  pattern: "sinhalasub",
+cmd({
+  pattern: "ckss",
   alias: ["movie"],
   react: "📑",
   category: "download",
