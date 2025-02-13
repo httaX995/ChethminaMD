@@ -1,4 +1,4 @@
-const { sinhalaSub } = require("mrnima-moviedl");
+const { sinhalaSub } = require("@sl-code-lords/movie-api");
 const axios = require("axios");
 
 // Command for searching and downloading movies
@@ -48,7 +48,7 @@ cmd({
         }
 
         const selectedMovie = movies[selectedIndex - 1];
-        const apiUrl = `https://api-site-2.vercel.app/api/sinhalasub/movie?url=${encodeURIComponent(selectedMovie.link)}`;
+        const apiUrl = `https://api-site-2.vercel.app/api/sinhalasub/movie?url=${encodeURIComponent(selectedMovie.url)}`;
 
         try {
           // Step 5: Fetch download links
