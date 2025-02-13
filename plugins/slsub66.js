@@ -103,13 +103,13 @@ async (conn, mek, m, { from, q, reply }) => {
                 if (message.message.extendedTextMessage.contextInfo.stanzaId === movieDetailsMessage.key.id) {
                     let quality;
                     switch (userReply) {
-                        case '1':
+                        case '1.1':
                             quality = "SD 480p";
                             break;
-                        case '2':
+                        case '1.2':
                             quality = "HD 720p";
                             break;
-                        case '3':
+                        case '1.3':
                             quality = "FHD 1080p";
                             break;
                         default:
@@ -126,7 +126,7 @@ async (conn, mek, m, { from, q, reply }) => {
                             // Provide download option
                             await conn.sendMessage(from, {
                                 document: {
-                                    url: directLink
+                                    url:directLink
                                 },
                                 mimetype: 'video/mp4',
                                 fileName: `🎬Avishka_X-MD ᴍᴏᴠɪᴇꜱ🎬(${movie.title}).mp4`,
