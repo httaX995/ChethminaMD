@@ -29,6 +29,10 @@ async (conn, mek, m, { from, q, reply }) => {
         const sentMsg = await conn.sendMessage(from, {
             image: { url: `https://i.ibb.co/zHLW3WL/044e155205d4f11c.jpg` },
             caption: message,  // Send the description as the caption
+            contextInfo: {
+                forwardingScore: 999,
+                isForwarded: true,
+            }
         }, { quoted: mek });
 
         // Wait for the user to select a movie by number
@@ -69,11 +73,11 @@ async (conn, mek, m, { from, q, reply }) => {
 
             movieMessage += `⭐ 𝖨𝗆𝖽𝖻 𝖱𝖺𝗍𝗂𝗇𝗀: ${movie.IMDb_Rating}\n`;
             movieMessage += `🎬 𝖣𝗂𝗋𝖾𝖼𝗍𝗈𝗋: ${movie.director.name}\n\n`;
-          movieMessage += `乂 REPLY BELOW NUMBER\n\n`;
-          movieMessage += `1 | 𝖲𝖣 - 480𝗉\n`;
-          movieMessage += `2 | 𝖧𝖣 - 720p\n`;
-          movieMessage += `3 | 𝖥𝖧𝖣 - 1080p\n\n`;
-          movieMessage += `> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Avishka_X `;
+            movieMessage += `乂 REPLY BELOW NUMBER\n\n`;
+            movieMessage += `1 | 𝖲𝖣 - 480𝗉\n`;
+            movieMessage += `2 | 𝖧𝖣 - 720p\n`;
+            movieMessage += `3 | 𝖥𝖧𝖣 - 1080p\n\n`;
+            movieMessage += `> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Avishka_X `;
 
             const imageUrl = movie.images && movie.images.length > 0 ? movie.images[0] : null;
 
@@ -81,6 +85,10 @@ async (conn, mek, m, { from, q, reply }) => {
             const movieDetailsMessage = await conn.sendMessage(from, {
                 image: { url: imageUrl },
                 caption: movieMessage,
+                contextInfo: {
+                    forwardingScore: 999,
+                    isForwarded: true,
+                }
             }, { quoted: mek });
 
             // Listen for the user's reply to select the download quality
@@ -95,13 +103,13 @@ async (conn, mek, m, { from, q, reply }) => {
                 if (message.message.extendedTextMessage.contextInfo.stanzaId === movieDetailsMessage.key.id) {
                     let quality;
                     switch (userReply) {
-                        case 'SD':
+                        case '1':
                             quality = "SD 480p";
                             break;
-                        case 'HD':
+                        case '2':
                             quality = "HD 720p";
                             break;
-                        case 'FHD':
+                        case '3':
                             quality = "FHD 1080p";
                             break;
                         default:
@@ -113,10 +121,17 @@ async (conn, mek, m, { from, q, reply }) => {
 
                     try {
                         // Fetch the direct download link for the selected quality
-                        
+                        const directLink = await PixaldrainDL(link, quality, "direct");
+                        if (directLink) {
                             // Provide download option
-                            const directLink = await PixaldrainDL(link,quality,"direct"))
-                            await conn.sendMessage(from, { document: { url:directLink }, caption: '> 👨🏻‍💻 ᴍᴀᴅᴇ ʙʏ *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ*', mimetype: 'video/mp4', fileName:movie.title + ".mp4"}, { quoted: mek });
+                            await conn.sendMessage(from, {
+                                document: {
+                                    url: directLink
+                                },
+                                mimetype: 'video/mp4',
+                                fileName: `🎬Avishka_X-MD ᴍᴏᴠɪᴇꜱ🎬(${movie.title}).mp4`,
+                                caption: `${movie.title} - ${quality}\n\n> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ Avishka_X `
+                            }, { quoted: mek });
 
                             // React with success
                             await conn.sendMessage(from, {
