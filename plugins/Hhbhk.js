@@ -1,5 +1,7 @@
+const config = require('../config')
+const {cmd , commands} = require('../command')
 cmd({
-    pattern: `smovie`,
+    pattern: "smovie",
     react: "📥",
     description: "movie downloader",
     use: ".movie kgf",
