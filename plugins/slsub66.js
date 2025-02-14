@@ -103,13 +103,13 @@ async (conn, mek, m, { from, q, reply }) => {
                 if (message.message.extendedTextMessage.contextInfo.stanzaId === movieDetailsMessage.key.id) {
                     let quality;
                     switch (userReply) {
-                        case '1':
+                        case 'SD':
                             quality = "SD 480p";
                             break;
-                        case '2':
+                        case 'HD':
                             quality = "HD 720p";
                             break;
-                        case '3':
+                        case 'FHD':
                             quality = "FHD 1080p";
                             break;
                         default:
