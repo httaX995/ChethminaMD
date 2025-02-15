@@ -87,14 +87,14 @@ try{
   var [jid,link,name] = q.split(",");
  let res = await fg.GDriveDl(link)
   var name = name ? `${name.replace(/enter/g,'\n').replace(/oname/g,res.fileName)}` : res.fileName
-reply(`\n⬇️  *TC TEAM GDRIVE DOWNLOADER*  ⬇️
+reply(`\n⬇️  *CK CineMAX*  ⬇️
 
-*📃 File name:*  ${"🎬 DARKALPHAXTEAM 🎬\n"+name}
+*📃 File name:*  ${"🎬CK CineMAX🎬 "+name}
 *💈 File Size:* ${res.fileSize}
 *🕹️ File type:* ${res.mimetype}
 
-*ᴛᴄ ᴛᴇᴀᴍ ᴍᴏᴠɪᴇᴅʟ*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴇᴄʜɴɪᴄᴀʟ ᴄʏʙᴇʀꜱ*`)		
-conn.sendMessage(jid, { document: { url: res.downloadUrl }, fileName: "🎬 ᴛᴄ ᴍᴏᴠɪᴇ ᴅʟ 🎬\n"+name, mimetype: res.mimetype , caption : "\n"+name+"\n\n> *𝗧𝗘𝗖𝗛𝗡𝗜𝗖𝗔𝗟 𝗖𝗬𝗕𝗘𝗥𝗦*"})
+> 👨🏻‍💻 ᴍᴀᴅᴇ ʙʏ *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ*`)		
+conn.sendMessage(jid, { document: { url: res.downloadUrl }, fileName: "🎬CK CineMAX🎬\n"+name, mimetype: res.mimetype , caption : "*🍀 ᴛɪᴛʟᴇ ➠*"+name+"\n*🌟 Qᴜᴀʟɪᴛʏ ➠* 720P\n\n> 👨🏻‍💻 *ᴄʜᴇᴛʜᴍɪɴᴀ ᴋᴀᴠɪꜱʜᴀɴ*"})
 } catch (e) {
 reply('*Error..! Your Url is Private. Please Public It*')
 l(e)
@@ -112,7 +112,6 @@ cmd({
 },
 async(conn, mek, m,{from, l, quoted, chat, body, isCmd, command, mentionByTag, db_pool, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isCreator ,isDev, isAdmins, reply}) => {
 try{
-if ( !isDev ) return reply('⚠️ ⚠️ *Contact owner to Active your number To Premium user*')
 if ( !m.quoted ) return reply('*ℹ .mkv jid & Halo (2024) TV Series E3*')
 if ( !q ) return 
 const data = q.split(" & ")[0] 
@@ -141,7 +140,6 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, mentionByTag, db_pool, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isCreator ,isDev, isAdmins, reply}) => {
 try{
 if ( !q ) return reply('Add a item')
-if ( !isDev ) return reply('⚠️ ⚠️ *Contact owner to Active your number To Premium user*')
 	const db_pool = new DBM({
     db: config.DATABASE_URL
 })
