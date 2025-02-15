@@ -121,7 +121,7 @@ async (conn, mek, m, { from, q, reply }) => {
 
                     try {
                         // Fetch the direct download link for the selected quality
-                        const directLink = await PixaldrainDL(link, quality, "alllinks");
+                        const directLink = await PixaldrainDL(link, quality, "direct");
                         if (directLink) {
                             // Provide download option
                             await conn.sendMessage(from, {
