@@ -17,7 +17,7 @@ const axios = require("axios");
 
 // Command for searching and downloading movies
 smd({
-  pattern: "sinhalasub",
+  pattern: "ssdlx",
   alias: ["movie"],
   react: "📑",
   category: "download",
