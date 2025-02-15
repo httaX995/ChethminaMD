@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 cmd({
-    pattern: "firemovie",
+    pattern: "firemoviex",
     alias: ["moviefire", "moviesearch"],
     react: "🎬",
     desc: "Search Movies on Fire Movies Hub",
