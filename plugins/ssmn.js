@@ -8,7 +8,7 @@ cmd({
     if (!q) { return await reply('*Please provide a direct URL!*')}
     try {
 
-const data0 = await fetchJson(`https://vajiraapi-089fa316ec80.herokuapp.com/movie/sinhalasub/search?text=${q}`);   
+const data0 = await fetchJson(`https://vajira-api.vercel.app/movie/sinhalasub/search?text=${q}`);   
 
 const data1 = data0.result.data[0].link
 console.log(data1)
