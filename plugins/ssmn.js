@@ -1,5 +1,5 @@
 cmd({
-    pattern: `movie`,
+    pattern: `ckmovie`,
     react: "📥",
     description: "movie downloader",
     use: ".movie kgf",
@@ -13,7 +13,7 @@ const data0 = await fetchJson(`https://vajira-api.vercel.app/movie/sinhalasub/se
 const data1 = data0.result.data[0].link
 console.log(data1)
 
-const data = await fetchJson(`https://vajiraapi-089fa316ec80.herokuapp.com/movie/sinhalasub/movie?url=${data1}`);   	    
+const data = await fetchJson(`https://vajira-api.vercel.app/movie/sinhalasub/movie?url=${data1}`);   	    
 const data2 = data.result.data.pixeldrain_dl[2].link
 console.log(data2)
     
