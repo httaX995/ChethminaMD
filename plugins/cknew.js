@@ -1,7 +1,8 @@
 const config = require('../config')
 const {cmd , commands} = require('../command')
 
-    pattern: "movie", 
+cmd({ 
+    pattern: "movie",  
     alias: ["film", "cinema"], 
     react: "🎬", 
     desc: "Search and Download Movies with Sinhala Subtitles", 
