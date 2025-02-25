@@ -15,7 +15,7 @@ cmd({
         if (!q) return await reply("⚠️ Please provide a movie name!");
 
         // Search for the movie
-        let searchUrl = `https://omindu-api.up.railway.app/api/sinhalasub/search?query=${encodeURIComponent(q)}`;
+        let searchUrl = `https://www.dark-yasiya-api.site/movie/sinhalasub/search?text=${encodeURIComponent(q)}`;
         let searchResponse = await fetch(searchUrl);
         let searchData = await searchResponse.json();
 
@@ -25,7 +25,7 @@ cmd({
         let movie = searchData.results.movies[0];
 
         // Get download links
-        let downloadUrl = `https://omindu-api.up.railway.app/api/sinhalasub/download?url=${encodeURIComponent(movie.link)}`;
+        let downloadUrl = `https://www.dark-yasiya-api.site/movie/sinhalasub/movie?url=${encodeURIComponent(movie.link)}`;
         let downloadResponse = await fetch(downloadUrl);
         let downloadData = await downloadResponse.json();
 
